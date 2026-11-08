@@ -1,15 +1,11 @@
-import { connection } from "next/server";
+export default function Footer() {
+ const tahun = new Date().getFullYear();
 
-export default async function Footer() {
-  await connection();
-  const tahun = new Date().getFullYear();
-
-  return (
+ return (
     <footer className="mt-auto bg-utama p-6 text-center text-latar">
-      <p>
-        &copy; {tahun} Fairuz Kanza Amira. Dibuat dengan Next.js di Kelas Industri
-        UBIG.
-      </p>
+     <p>&copy; {tahun} Fairuz Kanza Amira. Dibuat dengan Next.js di Kelas
+Industri UBIG.
+     </p>
     </footer>
   );
 }

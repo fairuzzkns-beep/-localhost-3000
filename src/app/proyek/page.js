@@ -1,84 +1,30 @@
-const proyek = [
-  {
-    slug: "modul-1",
-    nama: "Junior Web Developer Industry Class MODUL 1",
-    gambar: "Screenshot (93).png",
-    teknologi: ["HTML", "CSS", "CodePen"],
-    deskripsi: "Portofolio pertama saya untuk mempelajari dasar-dasar pengembangan website menggunakan HTML dan CSS.",
-    link: "https://tugas-1-smkn1kepanjen-umber.vercel.app/",
-  },
-  {
-    slug: "modul-2",
-    nama: "Mobile Responsive MODUL 2",
-    gambar: "Screenshot (92).png",
-    teknologi: ["HTML", "CSS", "Responsive"],
-    deskripsi: "Latihan membuat website responsif dengan tampilan desktop maupun smartphone.",
-    link: "https://tugas-2-smkn1kepanjen-five.vercel.app/",
-  },
-  {
-    slug: "modul-3",
-    nama: "Interactive Digital Profile MODUL 3",
-    gambar: "P3.png",
-    teknologi: ["HTML", "CSS", "JavaScript"],
-    deskripsi: "Profil digital interaktif dengan fitur pergantian tema dan modal kontak.",
-    link: "https://tugas-3-smkn1kepanjen-delta.vercel.app/",
-  },
-];
+import Image from "next/image";
+import FilterProyek from "@/components/Filterproyek"; 
+import { proyek } from "@/data/proyek"; 
 
-export default function Proyek() {
-  return (
-    <main className="min-h-screen bg-[#f0f8ed]">
-      <section className="mx-auto max-w-6xl px-6 py-12">
+export const metadata = {  
+  title: "Proyek",  
+  description: "Daftar proyek HTML, CSS, dan JavaScript karya Emmaula Anggraeni Wijaya.", 
+}; 
 
-        <h1 className="text-4xl font-bold text-[#203b60]">
-          Proyek Saya
-        </h1>
-
-        <p className="mt-3 text-lg text-[#405675]">
-          Kumpulan hasil belajar saya di Kelas Industri UBIG.
-          Klik kartu untuk melihat detailnya.
-        </p>
-
-        <div className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {proyek.map((item) => (
-            <a
-              key={item.slug}
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-2 hover:shadow-lg"
-            >
-              <img
-                src={item.gambar}
-                alt={item.nama}
-                className="h-48 w-full object-cover"
-              />
-
-              <div className="p-5">
-                <div className="mb-4 flex flex-wrap gap-2">
-                  {item.teknologi.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-[#203b60]"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <h2 className="text-xl font-bold text-[#203b60]">
-                  {item.nama}
-                </h2>
-
-                <p className="mt-2 text-sm leading-6 text-[#405675]">
-                  {item.deskripsi}
-                </p>
-              </div>
-            </a>
-          ))}
+export default function DaftarProyek() {  
+  return (    
+    <main className="mx-auto w-full max-w-5xl px-4 py-10">      
+      <header className="mb-8 flex flex-col items-center gap-6 sm:flex-row sm:items-start">
+        <Image
+          src="/image.png"
+          alt="Foto saya"
+          width={160}
+          height={160}
+          className="h-32 w-32 shrink-0 rounded-full border-4 border-red-600 object-cover object-[65%_center]"
+        />
+        <div>
+          <h1 className="text-3xl font-bold text-utama dark:text-sky-200 md:text-4xl">Proyek Saya</h1>
+          <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">Kumpulan hasil belajar saya di Kelas Industri UBIG. Klik kartu untuk melihat detailnya.</p>
         </div>
-
-      </section>
-    </main>
+      </header>
+      
+      <FilterProyek proyek={proyek} />    
+    </main>  
   );
 }

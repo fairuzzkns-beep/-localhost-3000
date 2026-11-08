@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Suspense } from "react";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -17,10 +16,10 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: {
-    default: "Fairuz Kanza Amira | portofolio",
+    default: "Fairuz Kanza Amira/ Portofolio",
     template: "%s | Fairuz Kanza Amira",
   },
-  description: "portofolio Fairuz Kanza Amira , siswi SMK calon Junior Web Developer di kelas Industri UBIG",
+  description: "portofolio Fairuz Kanza Amira, siswa SMK calon Junior Web Developer di kelas Industri UBIG",
 };
 
 
@@ -30,21 +29,10 @@ export default function RootLayout({ children }) {
       lang="id"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-latar text-gray-800">
+      <body className="min-h-full flex flex-col bg-latar dark:bg-gray-900 text-gray-800 dark:text-gray-100">
         <Navbar />
         {children}
-        <Suspense
-          fallback={
-            <footer className="mt-auto bg-utama p-6 text-center text-latar">
-              <p>
-                &copy; Fairuz Kanza Amira. Dibuat dengan Next.js di Kelas Industri
-                UBIG.
-              </p>
-            </footer>
-          }
-        >
-          <Footer />
-        </Suspense>
+        <Footer />
       </body>
 
     </html>

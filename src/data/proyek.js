@@ -1,41 +1,53 @@
 export const proyek = [
   {
-    slug: "Junior Web Developer Industry Class MODUL 1",
+    slug: "junior-web-developer-industry-class-modul-1",
     judul: "Junior Web Developer Industry Class MODUL 1",
-    kategori:["HTML", "CSS","CodePen"], 
+    kategori: "HTML, CSS, CodePen",
     minggu: "Minggu 01",
-    gambar: "/proyek/hasil_project_1.png",
-    deskripsi: "Portofolio pertama saya, yang dibangun dari nol sembari mempelajari dasar-dasar pengembangan frontend, struktur HTML, dan penataan gaya mode gelap (dark mode).",
-    fitur: [
-      "Membuat judul utama perkenalan diri menggunakan tag h1 dan paragraf deskripsi p",
-      "Menyusun section 'Tentang Saya' yang berisi ringkasan profil sebagai siswa RPL",
-      "Mendaftar keahlian dan skill yang sedang dipelajari menggunakan list poin (ul dan li)",
+    deskripsi:
+      "Portofolio pertama yang dibuat dari nol sebagai latihan dasar pengembangan frontend, struktur HTML, dan penataan tampilan.",
+    gambar: "/p1.png",
+    teknologi: ["HTML", "CSS", "CodePen"],
+    ringkasan:
+      "Pada modul pertama, saya berlatih membuat halaman perkenalan diri dan menyusun bagian profil serta daftar keahlian menggunakan HTML dan CSS.",
+    halYangDipelajari: [
+      "Membuat judul dan deskripsi perkenalan menggunakan elemen HTML.",
+      "Menyusun bagian profil dan keahlian dengan struktur halaman yang jelas.",
+      "Mengatur tampilan halaman menggunakan CSS.",
     ],
   },
   {
-    slug: "Mobile Responsive MODUL 2",
+    slug: "mobile-responsive-modul-2",
     judul: "Mobile Responsive MODUL 2",
-    kategori: ["HTML", "CSS", "Responsive"],
+    kategori: "HTML, CSS, Responsive",
     minggu: "Minggu 02",
-    gambar: "/proyek/hasil_project_2.png",
-    deskripsi: "Latihan desain web responsif yang mencakup tata letak fleksibel, titik henti (breakpoint) untuk desktop, status hover, serta pemeriksaan menggunakan Lighthouse.",
-    fitur: [
-      "Membuat kartu profil digital responsif dengan tata letak flexbox dan grid",
-      "Mengatur breakpoint media queries agar tampilan kartu proyek otomatis rapi di layar handphone",
-      "Menganalisis performa kecepatan dan aksesibilitas halaman web menggunakan audit Lighthouse",
+    deskripsi:
+      "Latihan desain web responsif yang mencakup tata letak fleksibel, breakpoint desktop, dan tampilan yang tetap nyaman di layar ponsel.",
+    gambar: "/p2.png",
+    teknologi: ["HTML", "CSS", "Responsive"],
+    ringkasan:
+      "Pada modul kedua, saya berlatih menata kartu profil untuk berbagai ukuran layar serta memeriksa tampilan dan aksesibilitas halaman.",
+    halYangDipelajari: [
+      "Membuat kartu profil responsif dengan layout yang fleksibel.",
+      "Mengatur breakpoint agar kartu tetap tertata di layar ponsel.",
+      "Memeriksa tampilan dan aksesibilitas menggunakan Lighthouse.",
     ],
   },
   {
-    slug: "Interactive Digital Profile MODUL 3",
+    slug: "interactive-digital-profile-modul-3",
     judul: "Interactive Digital Profile MODUL 3",
-    kategori: ["HTML", "CSS", "JAVASCRIPT"],
+    kategori: "HTML, CSS, JavaScript",
     minggu: "Minggu 03",
-    gambar: "/proyek/hasil_project_3.png",
-    deskripsi: "Profil interaktif yang menggunakan peristiwa (event) JavaScript untuk pergantian tema, sapaan dinamis, dan avatar animasi.",
-    fitur: [
-      "Membuat fitur sapaan dinamis (seperti 'Selamat Sore') yang otomatis berubah menggunakan logika waktu JavaScript",
-      "Mengintegrasikan tombol interaktif 'Mode Gelap' menggunakan JavaScript DOM untuk mengubah tema warna halaman",
-      "Menyusun daftar keahlian kompetensi industri (seperti HTML5 Semantic dan CSS3 Flexbox) dalam bentuk badge capsule yang rapi",
+    deskripsi:
+      "Profil digital interaktif dengan pergantian tema, sapaan dinamis, dan elemen profil yang merespons interaksi.",
+    gambar: "/p3.png",
+    teknologi: ["HTML", "CSS", "JavaScript"],
+    ringkasan:
+      "Pada modul ketiga, saya menggabungkan HTML dan CSS dengan event JavaScript untuk menambahkan interaksi pada profil digital.",
+    halYangDipelajari: [
+      "Menggunakan logika waktu untuk menampilkan sapaan dinamis.",
+      "Menambahkan interaksi tombol untuk mengganti tema halaman.",
+      "Menyusun informasi keahlian dalam bentuk badge.",
     ],
   },
 ];

@@ -2,56 +2,46 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function ProyekCard({ proyek }) {
+  const { slug, judul, deskripsi, gambar, teknologi } = proyek;
+
   return (
-    <Link
-      href={`/proyek/${proyek.slug}`}
-      
-      className="block overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all duration-300 group h-full flex flex-col justify-between"
-    >
-      
-      <div className="flex flex-col h-full">
-        
-        <div className="relative w-full aspect-video overflow-hidden bg-slate-50 flex-shrink-0 border-b border-gray-100">
+    <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-gray-700 dark:bg-gray-800">
+      <Link
+        href={`/proyek/${slug}`}
+        className="group block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-utama"
+        aria-label={`Lihat detail ${judul}`}
+      >
+        <div className="relative aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-gray-700">
           <Image
-            src={proyek.gambar}
-            alt={`Tangkapan layar ${proyek.judul}`}
-            fill 
-            sizes="(max-w-768px) 100vw, 33vw"
-            loading="eager"
-            priority={true}       
-            quality={100}         
-            unoptimized={true}    
-            className="object-cover object-top transition-transform duration-500 group-hover:scale-103"
+            src={gambar}
+            alt={`Tampilan ${judul}`}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
           />
         </div>
-
-        <div className="p-5 flex flex-col flex-grow justify-between">
-          <div>
-            {/* Bagian Kategori */}
-            <div className="flex flex-wrap gap-1">
-              {proyek.kategori.map((kat, index) => (
-                <span 
-                  key={index} 
-                  className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-utama mr-1 mb-1"
-                >
-                  {kat}
-                </span>
-              ))}
-            </div>
-            
-            {/* Judul Proyek */}
-            <h3 className="mt-3 text-lg font-bold text-utama group-hover:text-blue-600 transition-colors line-clamp-2">
-              {proyek.judul}
-            </h3>
-            
-            {/* Deskripsi Proyek dengan flex-grow agar batas bawah paragraf lurus sejajar */}
-            <p className="mt-1 text-sm text-gray-600 line-clamp-3 flex-grow">
-              {proyek.deskripsi}
-            </p>
-          </div>
+        <div className="p-5">
+          <ul
+            aria-label="Teknologi yang digunakan"
+            className="mb-4 flex flex-wrap gap-2"
+          >
+            {teknologi.map((nama) => (
+              <li
+                key={nama}
+                className="rounded-full bg-latar px-2.5 py-1 text-xs text-slate-700 dark:bg-gray-700 dark:text-gray-200"
+              >
+                {nama}
+              </li>
+            ))}
+          </ul>
+          <h3 className="text-lg font-bold text-utama dark:text-sky-200">
+            {judul}
+          </h3>
+          <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-600 dark:text-gray-300">
+            {deskripsi}
+          </p>
         </div>
-
-      </div>
-    </Link>
+      </Link>
+    </article>
   );
 }
